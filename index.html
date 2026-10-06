@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AgroOfelia | Café y Comercio Justo</title>
+    <link rel="icon" href="img/coffee-bean.ico" type="image/jpg" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style/AgroCafe.css">
+</head>
+
+<body>
+    <div class="bg-overlay"></div>
+    <header id="inicio">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3 fixed-top">
+            <div class="container">
+                <!-- Marca -->
+                <a class="navbar-brand fs-3 fw-bold position-relative" href="#" onclick="window.location.href='impacto Social.html'" style="cursor: pointer;">
+                    <i class="bi bi-cup-hot-fill text-warning me-2"></i>AgroCafe
+                    <span class="burbuja-historia">¡Impacto social!</span>
+                </a>
+
+                <!-- Botón móvil -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Navegación móvil">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Enlaces y Controles -->
+                <div class="collapse navbar-collapse" id="navbarContenido">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" onclick="filtrarCategoria('Todos')">Todos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cafe-tostado" onclick="filtrarCategoria('Café Tostado')">Café Tostado</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#herramientas" onclick="filtrarCategoria('Herramientas')">Herramientas</a>
+                        </li>
+                        
+                        <!-- PRECIO ACTUAL CON INDICADOR DINÁMICO -->
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-1" href="https://mx.investing.com/commodities/us-coffee-c" target="_blank" title="Ver cotización de mercado">
+                                Precio actual: 
+                                <span id="precio-cafe-ticker" class="badge bg-success ms-1 fs-7">
+                                    $245.50 MXN/kg <i class="bi bi-arrow-up-short"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Buscador, Usuario y Carrito -->
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="search-wrapper">
+                            <i class="bi bi-search text-white"></i>
+                            <input type="search" id="buscador" placeholder="Buscar productos..." onkeyup="buscarProducto()">
+                        </div>
+
+                        <!-- Icono de Registro/Perfil -->
+                        <a href="registro.html" class="text-white" aria-label="Registrarse o Iniciar sesión" title="Registro / Perfil">
+                            <i class="bi bi-person fs-4"></i>
+                        </a>
+
+                        <!-- Botón que abre el carrito -->
+                        <a href="#ventanaCarrito" data-bs-toggle="offcanvas" role="button" aria-controls="ventanaCarrito" class="text-white position-relative" aria-label="Carrito de compras" title="Carrito" style="cursor: pointer;">
+                            <i class="bi bi-cart-fill fs-4"></i>
+                            <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">
+                                0
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container" style="margin-top: 100px; flex-grow: 1;">
+        <!-- Banner de Impacto Social -->
+        <section id="impacto" class="social-banner text-center text-md-start d-flex flex-column flex-md-row align-items-center justify-content-between mb-5">
+            <div class="mb-3 mb-md-0">
+                <h2 class="fw-bold mb-2"><i class="bi bi-globe-americas me-2"></i>Comercio Justo y Apoyo a Productores Locales</h2>
+                <p class="mb-0 fs-5 opacity-75">Cada compra asegura un pago digno a nuestras familias caficultoras y promueve prácticas agrícolas sostenibles en Hidalgo.</p>
+            </div>
+            <button class="btn btn-outline-light btn-lg rounded-pill px-4" onclick="window.location.href='comercioJusto.html'">Descubre más</button>
+        </section>
+
+        <!-- Mensaje sin resultados -->
+        <div id="sin-resultado" class="alert alert-warning text-center fw-bold d-none shadow-sm" role="alert">
+            <i class="bi bi-emoji-frown me-2"></i> No existen productos con ese nombre.
+        </div>
+
+        <section class="catalogo pb-5">
+
+            <!-- Categoría: Café Tostado -->
+            <div class="text-center categoria-seccion" data-categoria="Café Tostado">
+                <h2 id="cafe-tostado" class="category-title">Café Tostado</h2>
+                <div class="row g-4 justify-content-center">
+
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Café de Especialidad Tueste Medio">
+                        <article class="glass-card">
+                            <div class="icono"><i class="bi bi-bag-fill"></i></div>
+                            <h3>Café de Especialidad</h3>
+                            <p>Tueste medio, notas a caramelo y chocolate. Origen: Veracruz.</p>
+                            <span class="precio">$250</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Café Orgánico Tueste Oscuro">
+                        <article class="glass-card">
+                            <div class="icono"><i class="bi bi-bag-check-fill"></i></div>
+                            <h3>Café Orgánico</h3>
+                            <p>Tueste oscuro, cuerpo intenso. Ideal para espresso. Origen: Chiapas.</p>
+                            <span class="precio">$280</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Granos con Chocolate">
+                        <article class="glass-card">
+                            <div class="icono"><i class="bi bi-box2-heart-fill"></i></div>
+                            <h3>Granos con Chocolate</h3>
+                            <p>Granos de café tostados cubiertos de chocolate amargo artesanal al 70%.</p>
+                            <span class="precio">$120</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Café Edición Pluma Hidalgo">
+                        <article class="glass-card">
+                            <div class="icono"><i class="bi bi-star-fill text-warning"></i></div>
+                            <h3>Edición Pluma Hidalgo</h3>
+                            <p>Proceso natural con notas afrutadas y acidez brillante. Origen: Oaxaca.</p>
+                            <span class="precio">$320</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Categoría: Herramientas y Accesorios -->
+            <div class="text-center categoria-seccion mt-5" data-categoria="Herramientas">
+                <h2 id="herramientas" class="category-title">Herramientas</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Espumador de Leche Portátil">
+                        <article class="glass-card">
+                            <div class="icono"><i class="bi bi-magic"></i></div>
+                            <h3>Espumador de Leche</h3>
+                            <p>Batidor eléctrico portátil. Crea una microespuma perfecta y cremosa para tus lattes y capuchinos.</p>
+                            <span class="precio">$180</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Tamper de Acero Inoxidable">
+                        <article class="glass-card">
+                            <div class="icono"><i class="bi bi-hammer"></i></div>
+                            <h3>Tamper Profesional</h3>
+                            <p>Base plana de acero sólido de 58mm y mango ergonómico de madera para compactar el espresso uniformemente.</p>
+                            <span class="precio">$450</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Termo Metálico de Viaje">
+                        <article class="glass-card">
+                            <div class="icono"><i class="bi bi-cup-straw"></i></div>
+                            <h3>Termo de Viaje</h3>
+                            <p>Doble pared al vacío que mantiene tu café de especialidad caliente hasta por 12 horas. Capacidad de 500ml.</p>
+                            <span class="precio">$350</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Molino Manual de Acero">
+                        <article class="glass-card">
+                            <div class="icono">⚙</div>
+                            <h3>Molino Manual</h3>
+                            <p>Muelas de acero inoxidable para una molienda precisa y uniforme.</p>
+                            <span class="precio">$850</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Prensa Francesa">
+                        <article class="glass-card">
+                            <div class="icono">☕</div>
+                            <h3>Prensa Francesa</h3>
+                            <p>Cristal de borosilicato y acero inoxidable. Capacidad de 800ml.</p>
+                            <span class="precio">$450</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4 producto-item" data-nombre="Taza de Cerámica Artesanal">
+                        <article class="glass-card">
+                            <div class="icono">🍵</div>
+                            <h3>Taza Artesanal</h3>
+                            <p>Hecha a mano por artesanos locales. Mantiene el calor perfectamente.</p>
+                            <span class="precio">$150</span>
+                            <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                                <i class="bi bi-cart-plus fs-5 me-2"></i> Agregar
+                            </button>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- INICIO DEL FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-auto">
+        <div class="container">
+            <div class="row">
+                <!-- Sección de Información / Marca -->
+                <div class="col-12 col-md-4 mb-4 text-center text-md-start">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-cup-hot-fill text-warning me-2"></i>AgroCafe
+                    </h5>
+                    <p class="opacity-75">
+                        Promoviendo el comercio justo y apoyando a las familias caficultoras. Descubre el verdadero sabor del café artesanal y de especialidad.
+                    </p>
+                </div>
+                
+                <!-- Enlaces Rápidos -->
+                <div class="col-12 col-md-4 mb-4 text-center">
+                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#inicio" class="text-white text-decoration-none opacity-75">Inicio</a></li>
+                        <li class="mb-2"><a href="#cafe-tostado" class="text-white text-decoration-none opacity-75">Café Tostado</a></li>
+                        <li class="mb-2"><a href="#herramientas" class="text-white text-decoration-none opacity-75">Herramientas</a></li>
+                        <li class="mb-2"><a href="Impacto.html" class="text-white text-decoration-none opacity-75">Impacto Social</a></li>
+                    </ul>
+                </div>
+
+                <!-- Información de Contacto -->
+                <div class="col-12 col-md-4 mb-4 text-center text-md-end">
+                    <h5 class="fw-bold mb-3">Contáctanos</h5>
+                    <ul class="list-unstyled opacity-75 mb-3">
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>Tulancingo, Hidalgo, México</li>
+                        <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>contacto@agrocafe.com</li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+52 775 123 4567</li>
+                    </ul>
+                    <!-- Redes Sociales -->
+                    <div>
+                        <a href="https://www.facebook.com/FincaOfelia?locale=es_LA" class="text-white me-3 fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/FincaOfelia?locale=es_LA" class="text-white me-3 fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://twitter.com/FincaOfelia" class="text-white fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-2 mb-3 border-secondary">
+            
+            <!-- Derechos de autor -->
+            <div class="text-center opacity-50">
+                <small>&copy; 2026 AgroCafe. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+    <!-- FIN DEL FOOTER -->
+
+    <!-- Ventana Lateral del Carrito -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="ventanaCarrito" aria-labelledby="tituloCarrito">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="tituloCarrito">
+                <i class="bi bi-cart3 me-2"></i>Tu Carrito
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+
+            <!-- Contenido del carrito -->
+            <div id="contenido-carrito" class="flex-grow-1 overflow-auto">
+                <div class="text-center mt-5 text-muted">
+                    <i class="bi bi-basket fs-1"></i>
+                    <p class="mt-3">Tu carrito está vacío.</p>
+                </div>
+            </div>
+
+            <!-- Sección de Totales y Botón de Pagar -->
+            <div class="border-top pt-3 mt-auto">
+                <div class="d-flex justify-content-between text-muted mb-1">
+                    <span>Subtotal:</span>
+                    <span id="carrito-subtotal">$0.00</span>
+                </div>
+                <div class="d-flex justify-content-between text-muted mb-2">
+                    <span>IVA (16%):</span>
+                    <span id="carrito-iva">$0.00</span>
+                </div>
+                <div class="d-flex justify-content-between fw-bold mb-3 fs-5 text-dark">
+                    <span>Total:</span>
+                    <span id="carrito-total">$0.00</span>
+                </div>
+                <button class="btn btn-dark w-100 rounded-pill py-2" onclick="alert('Próximamente: Pasarela de pago')">
+                    Proceder al pago
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script externo JS -->
+    <script src="js/AgroCafe.js"></script>
+
+    <!-- SCRIPT DEL PRECIO DINÁMICO DEL CAFÉ -->
+    <script>
+        function actualizarPrecioCafe() {
+            const badgePrecio = document.getElementById('precio-cafe-ticker');
+            if (!badgePrecio) return;
+
+            let precioBase = 245.50;
+            let variacion = (Math.random() * 3 - 1.5); // Variación entre -1.50 y +1.50
+            let nuevoPrecio = (precioBase + variacion).toFixed(2);
+
+            if (parseFloat(nuevoPrecio) >= precioBase) {
+                badgePrecio.className = 'badge bg-success ms-1 fs-7';
+                badgePrecio.innerHTML = `$${nuevoPrecio} MXN/kg <i class="bi bi-arrow-up-short"></i>`;
+            } else {
+                badgePrecio.className = 'badge bg-danger ms-1 fs-7';
+                badgePrecio.innerHTML = `$${nuevoPrecio} MXN/kg <i class="bi bi-arrow-down-short"></i>`;
+            }
+        }
+
+        // Actualizar cada 4 segundos
+        setInterval(actualizarPrecioCafe, 4000);
+    </script>
+</body>
+</html>

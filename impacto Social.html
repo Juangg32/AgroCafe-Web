@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Impacto Social | AgroCafe</title>
+    <link rel="icon" href="img/coffee-bean.ico" type="image/jpg" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style/AgroCafe.css">
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    <header id="inicio">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3 fixed-top">
+            <div class="container">
+                <a class="navbar-brand fs-3 fw-bold position-relative" href="index.html">
+                    <i class="bi bi-cup-hot-fill text-warning me-2"></i>AgroCafe
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Navegación móvil">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContenido">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio / Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="impacto Social.html">Impacto Social</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-1" href="https://mx.investing.com/commodities/us-coffee-c" target="_blank" title="Ver cotización de mercado">
+                                Precio actual: 
+                                <span id="precio-cafe-ticker" class="badge bg-success ms-1 fs-7">
+                                    $245.50 MXN/kg <i class="bi bi-arrow-up-short"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-4">
+                        <a href="registro.html" class="text-white" title="Registro / Perfil">
+                            <i class="bi bi-person fs-4"></i>
+                        </a>
+                        <a href="AgroCafe.html#ventanaCarrito" class="text-white position-relative" title="Carrito">
+                            <i class="bi bi-cart-fill fs-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>   
+
+    <main class="historia-main">
+        <!--CARRUSEL -->
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/iglesiatlacuilo.jpg" class="d-block w-100" alt="Finca Ofelia">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>El origen de Finca Ofelia.</h1>
+                            <p class="opacity-75">Un proyecto de vida de Don Marco para cultivar el mejor grano respetando la tierra.</p>
+                            <p><a class="btn btn-lg btn-warning" href="#">Conoce más</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Cafe.jpg" class="d-block w-100" alt="Comunidad">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Impulso a nuestra comunidad.</h1>
+                            <p>Trabajamos de la mano con agricultores locales para asegurar un trato justo y desarrollo social.</p>
+                            <p><a class="btn btn-lg btn-light" href="#">Nuestro impacto</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/cafemaduro.jpg" class="d-block w-100" alt="Cosecha">
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h1>Calidad en cada cosecha.</h1>
+                            <p>Selección manual de cerezas de café para llevar la excelencia poblana hasta tu taza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+
+        <!--SECCIÓN MARKETING -->
+        <div class="container marketing text-dark mt-5">
+
+            <!-- Tres columnas de texto abajo del carrusel -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="img/familia_precio.jpg" class="rounded-circle" alt="Comercio Justo">
+                    <h2 class="fw-normal mt-3">Comercio Justo</h2>
+                    <p>Garantizamos pagos dignos a los recolectores de la región, fomentando una economía circular que beneficia a decenas de familias locales.</p>
+                    <p><a class="btn btn-outline-secondary" href="#">Ver detalles &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="img/cafetales_cultivo.jpg" class="rounded-circle" alt="Sustentabilidad">
+                    <h2 class="fw-normal mt-3">Sustentabilidad</h2>
+                    <p>Nuestros métodos de cultivo protegen la flora y fauna de la región, utilizando fertilizantes orgánicos y cuidando los mantos acuíferos.</p>
+                    <p><a class="btn btn-outline-secondary" href="#">Ver detalles &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="img/Calidad_cafe.jpg" class="rounded-circle" alt="Calidad Premium">
+                    <h2 class="fw-normal mt-3">Calidad Premium</h2>
+                    <p>Cada grano de la Reserva de Don Marco es inspeccionado cuidadosamente para asegurar una taza limpia, dulce y con cuerpo excepcional.</p>
+                    <p><a class="btn btn-outline-secondary" href="#">Ver detalles &raquo;</a></p>
+                </div>
+            </div>
+
+            <!-- INICIO DE LOS FEATURETTES (Bloques de texto e imagen) -->
+            <hr class="featurette-divider">
+
+            <div class="row featurette align-items-center">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">El sueño de Don Marco. <span class="text-body-secondary">Raíces profundas.</span></h2>
+                    <p class="lead mt-3">Finca Ofelia nació no solo como una empresa agrícola, sino como un proyecto para revitalizar las tierras olvidadas. Con esfuerzo y pasión, Don Marco transformó parcelas áridas en un paraíso fértil, demostrando que el campo aún tiene mucho que dar.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="img/Paisaje.jpg" class="featurette-image img-fluid mx-auto" alt="Don Marco en el cafetal">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette align-items-center">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading fw-normal lh-1">Nuestras familias caficultoras. <span class="text-body-secondary">Crecemos juntos.</span></h2>
+                    <p class="lead mt-3">Para nosotros, el verdadero valor del café está en las manos que lo cultivan. Trabajamos día a día para brindar estabilidad y oportunidades de crecimiento a nuestras familias caficultoras, convirtiendo el esfuerzo en la finca en un verdadero motor de prosperidad.</p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img src="img/trabajadores.jpg" class="featurette-image img-fluid mx-auto" alt="Trabajadores en la comunidad">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette align-items-center">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">El proceso artesanal. <span class="text-body-secondary">Del campo a tu hogar.</span></h2>
+                    <p class="lead mt-3">Evitamos la maquinaria industrial invasiva. Nuestro tostado se realiza en lotes pequeños para monitorear la curva de temperatura exacta. El resultado es un producto ético, lleno de amor y con un perfil de sabor que cuenta la historia de nuestra tierra.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="img/Tiposcafe.jpg" class="featurette-image img-fluid mx-auto" alt="Proceso de tostado">
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+            <!-- FIN DE LOS FEATURETTES -->
+
+        </div><!-- /.container -->
+
+        <!-- FOOTER -->
+        <footer class="container text-dark pb-4">
+            <p class="float-end"><a href="#inicio" class="text-decoration-none">Volver arriba ↑</a></p>
+            <p>&copy; 2024 Finca Ofelia. &middot; <a href="#" class="text-decoration-none">Privacidad</a> &middot; <a href="#" class="text-decoration-none">Términos</a></p>
+        </footer>
+    </main>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script externo JS -->
+    <script src="js/AgroCafe.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comercio Justo | AgroCafe</title>
+    <link rel="icon" href="img/coffee-bean.ico" type="image/jpg" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style/AgroCafe.css">
+</head>
+
+<body>
+    <div class="bg-overlay"></div>|
+    <header id="inicio">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3 fixed-top">
+            <div class="container">
+                <a class="navbar-brand fs-3 fw-bold position-relative" href="Index.html">
+                    <i class="bi bi-cup-hot-fill text-warning me-2"></i>AgroCafe
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido" aria-controls="navbarContenido" aria-expanded="false" aria-label="Navegación móvil">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContenido">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3 align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio / Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="comercioJusto.html">Comercio Justo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center gap-1" href="https://mx.investing.com/commodities/us-coffee-c" target="_blank" title="Ver cotización de mercado">
+                                Precio actual: 
+                                <span id="precio-cafe-ticker" class="badge bg-success ms-1 fs-7">
+                                    $245.50 MXN/kg <i class="bi bi-arrow-up-short"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-4">
+                        <a href="registro.html" class="text-white" title="Registro / Perfil">
+                            <i class="bi bi-person fs-4"></i>
+                        </a>
+                        <a href="AgroCafe.html#ventanaCarrito" class="text-white position-relative" title="Carrito">
+                            <i class="bi bi-cart-fill fs-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container" style="margin-top: 120px; flex-grow: 1;">
+
+        <!-- HERO BANNER -->
+        <section class="text-center text-white py-5 mb-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: linear-gradient(135deg, rgba(34,139,34,0.85), rgba(20,50,20,0.9)); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15);">
+            <div class="container px-4">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3 text-uppercase fs-7">Compromiso Social</span>
+                <h1 class="display-4 fw-bold mb-3">Comercio Justo y Apoyo a Productores Locales</h1>
+                <p class="lead max-w-75 mx-auto opacity-90 fs-4">
+                    Cada compra asegura un pago digno a nuestras familias caficultoras y promueve prácticas agrícolas sostenibles en Hidalgo.
+                </p>
+            </div>
+        </section>
+
+        <!-- PILARES DE IMPACTO -->
+        <section class="mb-5">
+            <h2 class="text-center text-white fw-bold mb-4">Los Pilares de Nuestro Compromiso</h2>
+            <div class="row g-4">
+                
+                <div class="col-12 col-md-4">
+                    <article class="glass-card text-center p-4 h-100">
+                        <div class="icono mb-3 text-warning fs-1"><i class="bi bi-currency-dollar"></i></div>
+                        <h3 class="fw-bold mb-3">Pago Digno y Directo</h3>
+                        <p class="opacity-75">Eliminamos intermediarios innecesarios para garantizar que los caficultores de la región reciban un precio superior al del mercado internacional por su cosecha.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <article class="glass-card text-center p-4 h-100">
+                        <div class="icono mb-3 text-success fs-1"><i class="bi bi-tree-fill"></i></div>
+                        <h3 class="fw-bold mb-3">Agricultura Sostenible</h3>
+                        <p class="opacity-75">Fomentamos el cultivo bajo sombra y el uso de fertilizantes orgánicos para proteger los suelos, la flora y la fauna nativa del estado de Hidalgo.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <article class="glass-card text-center p-4 h-100">
+                        <div class="icono mb-3 text-info fs-1"><i class="bi bi-people-fill"></i></div>
+                        <h3 class="fw-bold mb-3">Desarrollo Comunitario</h3>
+                        <p class="opacity-75">Reinvertimos parte de las ganancias en herramientas, capacitación constante y mejoras en la infraestructura del campo para las familias productoras.</p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CIFRAS DE IMPACTO (MÉTRICAS) -->
+        <section class="my-5 py-4">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="glass-card py-4">
+                        <h3 class="display-5 fw-bold text-warning mb-0">+100</h3>
+                        <p class="mb-0 opacity-75">Familias Apoyadas</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="glass-card py-4">
+                        <h3 class="display-5 fw-bold text-success mb-0">100%</h3>
+                        <p class="mb-0 opacity-75">Origen Sostenible</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="glass-card py-4">
+                        <h3 class="display-5 fw-bold text-warning mb-0">0</h3>
+                        <p class="mb-0 opacity-75">Intermediarios</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="glass-card py-4">
+                        <h3 class="display-5 fw-bold text-info mb-0">100%</h3>
+                        <p class="mb-0 opacity-75">Café Artesanal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIO / HISTORIA -->
+        <section class="glass-card p-4 p-md-5 my-5 text-white">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-lg-7">
+                    <span class="text-warning fw-bold text-uppercase fs-7">Historia del Campo</span>
+                    <h2 class="fw-bold my-3">De la parcela a tu taza con transparencia total</h2>
+                    <p class="opacity-85">
+                        En las zonas cafetaleras de Hidalgo, el café representa más que una bebida: es el sustento de generaciones. Creemos firmemente que para lograr la máxima excelencia en taza, primero debemos garantizar la dignidad de las manos que cultivan y cosechan cada cereza de café.
+                    </p>
+                    <p class="opacity-85">
+                        Al elegir nuestro café de especialidad, te conviertes en un aliado directo para el bienestar de nuestros productores locales y el cuidado del medio ambiente.
+                    </p>
+                    <a href="AgroCafe.html" class="btn btn-warning text-dark fw-bold rounded-pill px-4 mt-2">
+                        <i class="bi bi-bag-check-fill me-2"></i>Ver Productos y Apoyar
+                    </a>
+                </div>
+                <div class="col-12 col-lg-5 text-center">
+                    <div class="p-4 rounded-4 border border-secondary bg-dark bg-opacity-50">
+                        <i class="bi bi-quote text-warning display-3"></i>
+                        <blockquote class="blockquote fs-5 my-3">
+                            "El apoyo constante y el pago justo nos permite mantener vivos nuestros cafetales y asegurar el futuro de nuestras familias."
+                        </blockquote>
+                        <figcaption class="blockquote-footer text-light opacity-75 mb-0">
+                            Familia Caficultora de Hidalgo
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-3 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 mb-4 text-center text-md-start">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-cup-hot-fill text-warning me-2"></i>AgroCafe
+                    </h5>
+                    <p class="opacity-75">
+                        Promoviendo el comercio justo y apoyando a las familias caficultoras. Descubre el verdadero sabor del café artesanal y de especialidad.
+                    </p>
+                </div>
+                
+                <div class="col-12 col-md-4 mb-4 text-center">
+                    <h5 class="fw-bold mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="AgroCafe.html" class="text-white text-decoration-none opacity-75">Inicio / Catálogo</a></li>
+                        <li class="mb-2"><a href="ComercioJusto.html" class="text-white text-decoration-none opacity-75">Comercio Justo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 mb-4 text-center text-md-end">
+                    <h5 class="fw-bold mb-3">Contáctanos</h5>
+                    <ul class="list-unstyled opacity-75 mb-3">
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>Tulancingo, Hidalgo, México</li>
+                        <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>contacto@agrocafe.com</li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+52 775 123 4567</li>
+                    </ul>
+                    <div>
+                        <a href="https://www.facebook.com/FincaOfelia?locale=es_LA" class="text-white me-3 fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/FincaOfelia?locale=es_LA" class="text-white me-3 fs-5" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://twitter.com/FincaOfelia" class="text-white fs-5" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="mt-2 mb-3 border-secondary">
+            <div class="text-center opacity-50">
+                <small>&copy; 2026 AgroCafe. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT DEL PRECIO DINÁMICO DEL CAFÉ -->
+    <script>
+        function actualizarPrecioCafe() {
+            const badgePrecio = document.getElementById('precio-cafe-ticker');
+            if (!badgePrecio) return;
+
+            let precioBase = 245.50;
+            let variacion = (Math.random() * 3 - 1.5);
+            let nuevoPrecio = (precioBase + variacion).toFixed(2);
+
+            if (parseFloat(nuevoPrecio) >= precioBase) {
+                badgePrecio.className = 'badge bg-success ms-1 fs-7';
+                badgePrecio.innerHTML = `$${nuevoPrecio} MXN/kg <i class="bi bi-arrow-up-short"></i>`;
+            } else {
+                badgePrecio.className = 'badge bg-danger ms-1 fs-7';
+                badgePrecio.innerHTML = `$${nuevoPrecio} MXN/kg <i class="bi bi-arrow-down-short"></i>`;
+            }
+        }
+
+        setInterval(actualizarPrecioCafe, 4000);
+    </script>
+</body>
+</html>

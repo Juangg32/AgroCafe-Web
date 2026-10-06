@@ -1,0 +1,231 @@
+body {
+    /* Imagen de fondo de granos de café a pantalla completa */
+    background: url('https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    padding-top: 70px;
+    background-color: #f8f9fa;
+    /* Fondo claro para contrastar con las tarjetas */
+}
+
+/* --- ESTILOS DEL CARRUSEL --- */
+.carousel-item img {
+    height: 60vh;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+/* --- ESTILOS DE LA SECCIÓN MARKETING (Plantilla Bootstrap) --- */
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+}
+
+.marketing .col-lg-4 img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.featurette-divider {
+    margin: 5rem 0;
+    /* Espacio entre los bloques */
+}
+
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.featurette-image {
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 40em) {
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
+
+svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+svg:hover {
+    transform: scale(1.2);
+}
+
+
+/* Overlay oscuro para mejorar el contraste general si es necesario */
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Encabezado oscuro y elegante */
+.navbar-custom {
+    background-color: rgba(26, 18, 14, 0.95) !important;
+    /* Marrón muy oscuro */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-custom .nav-link {
+    color: #e5e5e5;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: #d4af37;
+    /* Acento dorado */
+}
+
+/* Buscador personalizado en el navbar */
+.search-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 5px 10px;
+    width: 200px;
+}
+
+.search-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Efecto Glassmorphism para las tarjetas */
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    /* Blanco semi-transparente */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card .icono {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #5c3d2e;
+}
+
+.glass-card h3 {
+    color: #2c1e16;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.glass-card p {
+    color: #4a4a4a;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.glass-card .precio {
+    color: #d32f2f;
+    font-weight: 700;
+    font-size: 1.4rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Títulos de Categoría estilo "Píldora" */
+.category-title {
+    background: rgba(26, 18, 14, 0.85);
+    color: #d4af37;
+    padding: 0.5rem 2.5rem;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 2.5rem 0 1.5rem 0;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Banner de Impacto Social */
+.social-banner {
+    background: linear-gradient(135deg, rgba(74, 93, 35, 0.9) 0%, rgba(44, 30, 22, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
